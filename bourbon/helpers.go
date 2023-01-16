@@ -1,6 +1,9 @@
 package bourbon
 
-import "os"
+import (
+	"log"
+	"os"
+)
 
 func (b *Bourbon) CreateDirIfDoesntExist(path string) error {
 	const mode = 0755
@@ -28,4 +31,14 @@ func (b *Bourbon) CreateFileIfDoesntExists(path string) error {
 	}
 
 	return nil
+}
+
+func (b *Bourbon) startLoggers() (*log.Logger, *log.Logger) {
+	var infoLog *log.Logger
+	var errorLog *log.Logger
+
+	infoLog = log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
+	errorLog = log.New(os.Stdout, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
+
+	return infoLog, errorLog
 }

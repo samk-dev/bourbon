@@ -21,7 +21,8 @@ func initApp() *application {
 	}
 
 	bourbon.AppName = "testapp"
-	bourbon.Debug = true
+
+	bourbon.InfoLog.Println("Debug is set to", bourbon.Debug)
 
 	app := &application{
 		App: bourbon,

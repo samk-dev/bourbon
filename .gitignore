@@ -2,3 +2,5 @@
 testapp/vendor
 testapp/temp
 testapp/tmp
+.env
+testapp/.env
