@@ -1,1 +1,4 @@
 .DS_Store
+testapp/vendor
+testapp/temp
+testapp/tmp
